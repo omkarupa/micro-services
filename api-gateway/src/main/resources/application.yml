@@ -1,0 +1,9 @@
+
+server:
+  port: 8765
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
