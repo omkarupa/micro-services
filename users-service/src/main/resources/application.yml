@@ -9,7 +9,7 @@ spring:
       enabled: true
 
 server:
-  port: 0
+  port: 8080
 
 
 eureka:
@@ -19,4 +19,4 @@ eureka:
     instance-id: ${spring.application.name}:${server.port}
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/ 
+      defaultZone: http://eureka-server:8761/eureka/ 
