@@ -14,6 +14,18 @@ services:
       - eureka-server
     networks:
       - microservices-network
+  api-gateway:
+    build: ./api-gateway
+    environment:
+      - SPRING_PROFILES_ACTIVE=qa   # ✅ CORRECT PLACE
+    depends_on:
+      - eureka-server
+    container_name: api-gateway
+    ports:
+      - "8765:8765"
+    networks:
+      - microservices-network
+
 
 networks:
   microservices-network:
