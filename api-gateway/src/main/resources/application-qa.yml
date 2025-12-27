@@ -19,3 +19,4 @@ eureka:
     instance-id: ${spring.application.name}:${server.port}
   client:
     service-url:
+      defaultZone: http://eureka-server:8761/eureka/ 
