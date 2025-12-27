@@ -27,7 +27,7 @@ pipeline {
         stage('Build User Service') {
             steps {
                 dir('users-service') {
-                    bat 'mvn clean package -DskipTests -Dspring.profiles.active=qa'
+                    bat 'mvn clean package -DskipTests'
                 }
             }
         }
