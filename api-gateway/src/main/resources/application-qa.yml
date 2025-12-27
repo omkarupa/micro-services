@@ -1,0 +1,14 @@
+
+spring:
+  application:
+    name: api-gateway
+server:
+  port: 8765
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/ 
