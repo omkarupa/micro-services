@@ -19,7 +19,7 @@ pipeline {
         stage('Build Eureka Server') {
             steps {
                 dir('eureka-service') {
-                    bat 'mvn clean package -DskipTests'
+                    bat 'mvn clean package -DskipTests '
                 }
             }
         }
@@ -27,7 +27,7 @@ pipeline {
         stage('Build User Service') {
             steps {
                 dir('users-service') {
-                    bat 'mvn clean package -DskipTests'
+                    bat 'mvn clean package -DskipTests -Dspring.profiles.active=qa'
                 }
             }
         }
