@@ -2,6 +2,14 @@
 spring:
   application:
     name: api-gateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
 server:
   port: 8765
 
@@ -11,4 +19,3 @@ eureka:
     instance-id: ${spring.application.name}:${server.port}
   client:
     service-url:
-      defaultZone: http://eureka-server:8761/eureka/ 
